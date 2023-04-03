@@ -1,0 +1,34 @@
+goblin@goblin-MS-7B87:~/git/TCS/Lab_03$ sudo docker build -t lab_03 .
+[sudo] password for goblin: 
+[+] Building 16.9s (8/8) FINISHED                                               
+ => [internal] load .dockerignore                                          0.0s
+ => => transferring context: 2B                                            0.0s
+ => [internal] load build definition from Dockerfile                       0.0s
+ => => transferring dockerfile: 192B                                       0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest           1.6s
+ => [1/3] FROM docker.io/library/ubuntu:latest@sha256:67211c14fa74f070d27  1.1s
+ => => resolve docker.io/library/ubuntu:latest@sha256:67211c14fa74f070d27  0.0s
+ => => sha256:2ab09b027e7f3a0c2e8bb1944ac46de38cebab714 29.53MB / 29.53MB  0.7s
+ => => sha256:67211c14fa74f070d27cc59d69a7fa9aeff8e28ea11 1.13kB / 1.13kB  0.0s
+ => => sha256:7a57c69fe1e9d5b97c5fe649849e79f2cfc3bf11d10bbd5 424B / 424B  0.0s
+ => => sha256:08d22c0ceb150ddeb2237c5fa3129c0183f3cc6f5ee 2.30kB / 2.30kB  0.0s
+ => => extracting sha256:2ab09b027e7f3a0c2e8bb1944ac46de38cebab7145f0bd6e  0.3s
+ => [internal] load build context                                          0.0s
+ => => transferring context: 312B                                          0.0s
+ => [2/3] RUN apt-get update -y && apt-get install -y apache2             13.7s
+ => [3/3] COPY web_server/ /var/www/html/                                  0.0s
+ => exporting to image                                                     0.5s
+ => => exporting layers                                                    0.5s
+ => => writing image sha256:b020afd7d2958ad02affb207f5545dc5162bf36e44fbe  0.0s 
+ => => naming to docker.io/library/lab_03                                  0.0s 
+goblin@goblin-MS-7B87:~/git/TCS/Lab_03$ sudo docker run -p 8080:80 lab_03
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.17.0.2. Set the 'ServerName' directive globally to suppress this message
+
+
+
+goblin@goblin-MS-7B87:~/git/TCS/Lab_03/mysql$ sudo docker run -d -p 3306:3306 --name mysql -v ./data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=test_db mysql
+[sudo] password for goblin: 
+8e65078a9f076c2c660c58cbfdf41ecbeae0a29c5528f788b507c1213f3a959a
+goblin@goblin-MS-7B87:~/git/TCS/Lab_03/mysql$ sudo docker run -d --name myadmin --link mysql:db -e PMA_HOST=db -e PMA_USER=root -e PMA_PASSWORD=root -p 8080:80 phpmyadmin/phpmyadmin:latest
+dc6938dcc8d30ff3bebd5d3f855fb3a117d3356caa018c4c7a5e04ec35c89452
+
