@@ -1,0 +1,107 @@
+~/git/TCS/Lab_04/mysql$ sudo docker-compose up --remove-orphans
+/snap/docker/2746/lib/python3.6/site-packages/paramiko/transport.py:32: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography. The next release of cryptography (40.0) will be the last to support Python 3.6.
+  from cryptography.hazmat.backends import default_backend
+Recreating mysql ... done
+Recreating phpmyadmin ... done
+Attaching to mysql, phpmyadmin
+mysql         | 2023-05-14 11:38:58+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.33-1.el8 started.
+mysql         | 2023-05-14 11:38:58+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+mysql         | 2023-05-14 11:38:58+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.33-1.el8 started.
+mysql         | 2023-05-14 11:38:58+00:00 [Note] [Entrypoint]: Initializing database files
+mysql         | 2023-05-14T11:38:58.247413Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+mysql         | 2023-05-14T11:38:58.247462Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 8.0.33) initializing of server in progress as process 80
+mysql         | 2023-05-14T11:38:58.298461Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+phpmyadmin    | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.22.0.3. Set the 'ServerName' directive globally to suppress this message
+phpmyadmin    | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.22.0.3. Set the 'ServerName' directive globally to suppress this message
+phpmyadmin    | [Sun May 14 11:38:58.391928 2023] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.56 (Debian) PHP/8.1.17 configured -- resuming normal operations
+phpmyadmin    | [Sun May 14 11:38:58.391945 2023] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+mysql         | 2023-05-14T11:38:58.492439Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysql         | 2023-05-14T11:38:59.285691Z 6 [Warning] [MY-010453] [Server] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+mysql         | 2023-05-14 11:39:01+00:00 [Note] [Entrypoint]: Database files initialized
+mysql         | 2023-05-14 11:39:01+00:00 [Note] [Entrypoint]: Starting temporary server
+mysql         | 2023-05-14T11:39:01.755811Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+mysql         | 2023-05-14T11:39:01.756611Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.33) starting as process 124
+mysql         | 2023-05-14T11:39:01.764406Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+mysql         | 2023-05-14T11:39:01.821527Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysql         | 2023-05-14T11:39:01.982860Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+mysql         | 2023-05-14T11:39:01.982879Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+mysql         | 2023-05-14T11:39:01.984294Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+mysql         | 2023-05-14T11:39:01.992960Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: /var/run/mysqld/mysqlx.sock
+mysql         | 2023-05-14T11:39:01.992974Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.33'  socket: '/var/run/mysqld/mysqld.sock'  port: 0  MySQL Community Server - GPL.
+mysql         | 2023-05-14 11:39:01+00:00 [Note] [Entrypoint]: Temporary server started.
+mysql         | '/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+mysql         | Warning: Unable to load '/usr/share/zoneinfo/iso3166.tab' as time zone. Skipping it.
+mysql         | Warning: Unable to load '/usr/share/zoneinfo/leap-seconds.list' as time zone. Skipping it.
+mysql         | Warning: Unable to load '/usr/share/zoneinfo/leapseconds' as time zone. Skipping it.
+mysql         | Warning: Unable to load '/usr/share/zoneinfo/tzdata.zi' as time zone. Skipping it.
+mysql         | Warning: Unable to load '/usr/share/zoneinfo/zone.tab' as time zone. Skipping it.
+mysql         | Warning: Unable to load '/usr/share/zoneinfo/zone1970.tab' as time zone. Skipping it.
+mysql         | 2023-05-14 11:39:02+00:00 [Note] [Entrypoint]: Creating database test_db
+mysql         | 
+mysql         | 2023-05-14 11:39:02+00:00 [Note] [Entrypoint]: Stopping temporary server
+mysql         | 2023-05-14T11:39:02.861132Z 11 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 8.0.33).
+mysql         | 2023-05-14T11:39:04.591226Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.33)  MySQL Community Server - GPL.
+mysql         | 2023-05-14 11:39:04+00:00 [Note] [Entrypoint]: Temporary server stopped
+mysql         | 
+mysql         | 2023-05-14 11:39:04+00:00 [Note] [Entrypoint]: MySQL init process done. Ready for start up.
+mysql         | 
+mysql         | 2023-05-14T11:39:05.056685Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+mysql         | 2023-05-14T11:39:05.057495Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.33) starting as process 1
+mysql         | 2023-05-14T11:39:05.060959Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+mysql         | 2023-05-14T11:39:05.116364Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysql         | 2023-05-14T11:39:05.250814Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+mysql         | 2023-05-14T11:39:05.250836Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+mysql         | 2023-05-14T11:39:05.252503Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+mysql         | 2023-05-14T11:39:05.265884Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+mysql         | 2023-05-14T11:39:05.265925Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.33'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+phpmyadmin    | 172.22.0.1 - - [14/May/2023:11:39:31 +0000] "GET /index.php?route=/ HTTP/1.1" 200 18246 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0"
+phpmyadmin    | 172.22.0.1 - - [14/May/2023:11:39:32 +0000] "GET /themes/pmahomme/img/s_tbl.png HTTP/1.1" 200 929 "http://localhost:8080/themes/pmahomme/css/theme.css?v=5.2.1" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0"
+phpmyadmin    | 172.22.0.1 - - [14/May/2023:11:39:32 +0000] "GET /favicon.ico HTTP/1.1" 200 22788 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0"
+phpmyadmin    | 172.22.0.1 - - [14/May/2023:11:39:32 +0000] "POST /index.php?route=/config/get HTTP/1.1" 200 2114 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0"
+phpmyadmin    | 172.22.0.1 - - [14/May/2023:11:39:32 +0000] "POST /index.php?route=/navigation&ajax_request=1 HTTP/1.1" 200 2847 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0"
+phpmyadmin    | 172.22.0.1 - - [14/May/2023:11:39:32 +0000] "POST /index.php?route=/config/get HTTP/1.1" 200 2205 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0"
+phpmyadmin    | 172.22.0.1 - - [14/May/2023:11:39:32 +0000] "POST /index.php?route=/version-check HTTP/1.1" 200 684 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0"
+phpmyadmin    | 172.22.0.1 - - [14/May/2023:11:39:32 +0000] "POST /index.php?route=/config/set HTTP/1.1" 200 2104 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0"
+phpmyadmin    | 172.22.0.1 - - [14/May/2023:11:42:16 +0000] "GET /themes/pmahomme/jquery/images/ui-icons_222222_256x240.png HTTP/1.1" 200 4051 "http://localhost:8080/themes/pmahomme/jquery/jquery-ui.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0"
+phpmyadmin    | 172.22.0.1 - - [14/May/2023:11:42:16 +0000] "GET /themes/pmahomme/jquery/images/ui-bg_highlight-soft_75_cccccc_1x100.png HTTP/1.1" 200 406 "http://localhost:8080/themes/pmahomme/jquery/jquery-ui.css" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0"
+^CGracefully stopping... (press Ctrl+C again to force)
+Stopping phpmyadmin   ... done
+Stopping mysql        ... done
+
+
+
+
+
+
+
+
+
+
+
+goblin@goblin-MS-7B87:~/git/TCS/Lab_04/time_checker$ sudo docker-compose up -d
+/snap/docker/2746/lib/python3.6/site-packages/paramiko/transport.py:32: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography. The next release of cryptography (40.0) will be the last to support Python 3.6.
+  from cryptography.hazmat.backends import default_backend
+Starting time_checker_check_1 ... done
+Starting time_checker_clock_1 ... done
+goblin@goblin-MS-7B87:~/git/TCS/Lab_04/time_checker$ sudo docker-compose logs
+/snap/docker/2746/lib/python3.6/site-packages/paramiko/transport.py:32: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography. The next release of cryptography (40.0) will be the last to support Python 3.6.
+  from cryptography.hazmat.backends import default_backend
+Attaching to time_checker_check_1, time_checker_clock_1
+check_1  | File name: 2023-05-14 13_08_24.txt, content: 2023-05-14 13:08:24
+check_1  | File name: 2023-05-14 13_08_34.txt, content: 2023-05-14 13:08:34
+check_1  | File name: 2023-05-14 13_08_24.txt, content: 2023-05-14 13:08:24
+check_1  | File name: 2023-05-14 13_08_44.txt, content: 2023-05-14 13:08:44
+check_1  | File name: 2023-05-14 13_08_54.txt, content: 2023-05-14 13:08:54
+check_1  | File name: 2023-05-14 13_09_24.txt, content: 2023-05-14 13:09:24
+check_1  | File name: 2023-05-14 13_09_54.txt, content: 2023-05-14 13:09:54
+check_1  | File name: 2023-05-14 13_09_44.txt, content: 2023-05-14 13:09:44
+check_1  | File name: 2023-05-14 13_09_34.txt, content: 2023-05-14 13:09:34
+check_1  | File name: 2023-05-14 13_09_24.txt, content: 2023-05-14 13:09:24
+check_1  | File name: 2023-05-14 13_09_54.txt, content: 2023-05-14 13:09:54
+check_1  | File name: 2023-05-14 13_10_14.txt, content: 2023-05-14 13:10:14
+check_1  | File name: 2023-05-14 13_09_44.txt, content: 2023-05-14 13:09:44
+check_1  | File name: 2023-05-14 13_10_24.txt, content: 2023-05-14 13:10:24
+check_1  | File name: 2023-05-14 13_10_04.txt, content: 2023-05-14 13:10:04
+check_1  | File name: 2023-05-14 13_09_34.txt, content: 2023-05-14 13:09:34
+check_1  | File name: 2023-05-14 13_09_24.txt, content: 2023-05-14 13:09:24
+

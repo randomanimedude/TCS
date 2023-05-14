@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  clock:
+    build:
+      context: ./clock
+    volumes:
+      - ./time:/time
+    restart: always
+  
+  check:
+    build:
+      context: ./check
+    volumes:
+      - ./time:/time
+    restart: always
+    environment:
+      PYTHONUNBUFFERED: '1'
+
+volumes:
+  time:
+
